@@ -1,0 +1,22 @@
+# --- Inferencia local de modelos ---------------------------------------------
+# PyTorch: en GPU NVIDIA instala la variante CUDA desde https://pytorch.org
+# (en CPU basta con `pip install torch`). Ver README, paso 3.
+torch>=2.4
+transformers>=4.56        # Qwen3 (Qwen3-0.6B / Qwen3-4B-Instruct-2507)
+accelerate>=1.0           # carga eficiente y CPU offload
+diffusers>=0.32           # Stable Diffusion v1.4, SDXL, FLUX.1-schnell, AudioLDM
+sentencepiece>=0.2        # tokenizador T5 que usa FLUX.1-schnell
+protobuf>=4.25
+piper-tts>=1.3            # voz en español (ONNX, local)
+huggingface_hub>=0.25     # descarga única de pesos desde Hugging Face
+numpy>=1.26
+pillow>=10
+
+# --- Servidor web ------------------------------------------------------------
+fastapi>=0.110
+uvicorn>=0.29
+python-dotenv>=1.0        # lectura del archivo .env
+
+# --- Pruebas (opcional) ------------------------------------------------------
+pytest>=8
+httpx>=0.27               # cliente de pruebas de FastAPI
